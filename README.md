@@ -1,5 +1,53 @@
 # Teachable frontend takehome
 
+## TODOS
+
+1. Set up npm copmonent libraries- material design component library to allow quick prototyping
+2. Configure design scheme with nice looking font and color scheme (containing red for ruby)
+3. Basic architecture/ navigation
+    * Header to contain app title-I've decided to give the app a working title "Gemmy", for better or worse
+    * Set up 2 views: "Search Gems" and "My Gems"
+    * Index loads "Search Gems" view
+    * Set up navigation for the 2 views (react router)
+4. Data layer (redux): 
+    * Actions for search functionality - request, success, and failure
+    * Actions for gem storage functionality - save, remove
+    * Redux reducers for "searchGems" and "myGems"
+    * Mock data & Jest tests (important for designing against 3rd party APIs)
+8. Implement "Search Gems" functionality:
+    * Create text input with search icon button and "Search Gems" label
+    * Show loader & disable form while results are fetching
+    * Show "No gems found" message in the case of zero results
+    * Show "Sorry, there was an error" in the case of network error
+    * Search result component
+      * Show name and version of ruby gem
+      * Implement "Save to My Gems" functionality via star icon button (similar to Google bookmark functionality)
+      * If result is already saved, star icon is shown in unsaved (gray) state, and "Remove" button appears
+      * Save/ remove to localStorage
+9. Implement "My Gems" page functionality:
+   * Stored gem component similar to search result component- user can save and unsave
+
+
+Nice-to-haves
+
+1. Index page should load "My Gems" if the user has gems, else the search page
+2. Header to contain simple diamond SVG for a logo
+3. Selenium/ cucumber end-to-end testing
+4. Build static files on associated github page
+5. Research and handle any limits on localStorage capacity if the user saves a lot of gems
+6. Cache search results in localStorage
+7. "My Gems" page and navigation title indicate saved gem count
+8. "Activity" page pulling from /api/v1/activity/latest
+9. Gem component expandable to show extra data returned by the api (dependencies, downloads, info, etc)
+10. Allow user to login so we can store their gems more permanently on our server
+
+---
+---
+
+Preserving original README below:
+
+---
+---
 If you're reading this, you're likely a candidate for a frontend job at Teachable. You're going to be building a search application that takes a user's search query, hits the [Ruby Gems](https://rubygems.org/) search API endpoint, and displays the results in a list view with some added functionality (detailed below).
 
 The application, once completed, should meet the following criteria:
