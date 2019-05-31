@@ -3,7 +3,7 @@
 ## TODOS
 
 1. Set up npm copmonent libraries- material design component library  to allow quick prototyping ✔️
-2. Configure design scheme with nice looking font and color scheme (containing red for ruby)
+2. Configure design scheme with nice looking font and color scheme (containing red for ruby) ✔️
 3. Basic architecture/ navigation
     * Header to contain app title-I've decided to give the app a working title "Gemmy", for better or worse
     * Set up 2 views: "Search Gems" and "My Gems"
