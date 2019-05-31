@@ -20,8 +20,14 @@
   },
   "homepage": "https://github.com/UseFedora/frontend-takehome-parcel#readme",
   "dependencies": {
+    "@material-ui/core": "^4.0.1",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
-    "parcel": "^1.9.7"
+    "parcel": "^1.9.7",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.5.1"
   }
 }
