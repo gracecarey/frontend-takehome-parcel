@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-
+import ResponsiveDrawer from './components/Drawer'
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core';
-
+import SavedGems from './components/SavedGems';
+import SearchGems from './components/SearchGems';
 
 const theme = createMuiTheme({
+  // todo: move hex colors into better-named constant variables
   palette: {
     // dark cool ruby/ garnet colors
     primary: {
@@ -22,16 +25,32 @@ const theme = createMuiTheme({
       dark: "#bf5f82",
       contrastText: "#000000"
     }
+  },
+  typography: {
+    h1: {
+      fontSize: '1rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.2rem',
+      },
+      fontFamily: "'Staatliches', cursive"
+    }
   }
 })
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <ResponsiveDrawer>
+          <Route path="/" exact component={ SearchGems } />
+          <Route path="/search-gems" component={ SearchGems } />
+          <Route path="/saved-gems" component={ SavedGems } />
+          <Button variant="contained" color="primary">
+            Hello World
+          </Button>
+        </ResponsiveDrawer>
+      </ThemeProvider>
+    </Router>
   );
 }
 
